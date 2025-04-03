@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Product Details</h1>
+  <div id="product-details">
+    <img id="product-image" src="" alt="Product Image" />
+    <h2 id="product-title"></h2>
+    <p id="product-price"></p>
+    <p id="product-description">This is a great product. Buy now!</p>
+  </div>
+</body>
+<script>
+  // Get parameters from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  document.getElementById('product-image').src = urlParams.get('image');
+  document.getElementById('product-title').innerText = urlParams.get('title');
+  document.getElementById('product-price').innerText = `Price: ${urlParams.get('price')}`;
+</script>
+</html>

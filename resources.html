@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .resource-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .resource-card {
+            background-color: white;
+            padding: 20px;
+            width: 45%;
+            min-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .resource-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Explore Our Resources</h1>
+
+        <div class="resource-section">
+            <div class="resource-card">
+                <h2>Comprehensive Guides</h2>
+                <p>Step-by-step tutorials to help you grow your e-commerce business efficiently.</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="resource-card">
+                <h2>Video Tutorials</h2>
+                <p>Watch in-depth video lessons covering various aspects of business and development.</p>
+                <a href="#">Watch Now</a>
+            </div>
+
+            <div class="resource-card">
+                <h2>Case Studies</h2>
+                <p>Learn from real-world examples of businesses that scaled using our platform.</p>
+                <a href="#">View Cases</a>
+            </div>
+
+            <div class="resource-card">
+                <h2>FAQs & Support</h2>
+                <p>Get answers to common questions and explore our support documentation.</p>
+                <a href="#">Visit FAQ</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+    font-family: cursive;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+
+}
+#bg-video {
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#content{
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+#header{
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    display: flex;
+}
+#header:hover{
+    background-color: rgb(16, 16, 16);
+    text-decoration: underline;
+}
+
+#fakehead{
+    width: 100%;
+    height: 10%;
+}
+#nav{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-left: 140px;
+}
+#trial {
+    background-color: white;  
+    border: 2px solid black;
+    border-radius: 10px;  
+    padding: 10px 20px;
+    display: inline-block;  
+}
+
+#trial a {
+    text-decoration: none; 
+    color: black;  
+    font-weight: bold;  
+    display: block; 
+}
+#page1{
+    width: 100%;
+    height: 100%;
+}
+#page2{
+    width: 100%;
+    
+}
+#page3{
+    width: 100%;
+    background-color: #007bff;
+    height: 100%;
+}
+.text{
+    margin-left: 40px;
+}
+#logo{
+    padding: 7px;
+}
+#logo img{
+    margin-left: 50px;
+    width: 90px;
+    height: 60px;
+}
+#button{
+    margin-left: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#div1{
+    width: 100%;
+    padding: 1px;
+    font-size: 1.3rem;
+    height: 85%;
+}
+#div1 h1{
+    padding: 120px;
+    margin-left: 2px;
+    margin-top: 170px;
+    font-weight: 100;
+}
+
+#div3{
+    width: 100%;
+    height: 15%;
+    padding: 16px;
+}
+#div3 h1{
+    font-weight: 100;
+    margin-left: 100px;
+    
+}
+#login{
+    margin-left: 10px;
+}
+#trial{
+    margin-left: 40px;
+}
+
+#page2 h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+#page2 h2 {
+    margin-left: 20px;
+    color: #555;
+}
+
+.product-section {
+    margin: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 280px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+p {
+    color: #777;
+}
+
+.discount {
+    color: #e44d26;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .product-card {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1201px) {
+    .product-card {
+        width: 30%;
+    }
+}
+
+
+/*for footeer/
+/* Footer Section */
+#footer {
+    background-color: #001f3f; /* Navy blue background */
+    color: white;
+    padding: 50px 0;
+    font-size: 1rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-column {
+    width: 22%;
+    min-width: 250px;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: 20px;
+    color: #00bcd4; /* Cyan Color */
+    font-size: 1.4rem;
+  }
+  
+  .footer-column p,
+  .footer-column a {
+    color: #bbb;
+    text-decoration: none;
+    margin-bottom: 12px;
+    display: block;
+    font-size: 1rem;
+  }
+  
+  .footer-column a:hover {
+    color: #00bcd4; /* Hover color */
+    transition: 0.3s ease;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Social Icons */
+  .social-icons a {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .social-icons img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icons a:hover img {
+    transform: scale(1.2);
+  }
+  
+  /* Footer Bottom Section */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-column {
+      margin-bottom: 30px;
+    }
+  }
+  
+
+

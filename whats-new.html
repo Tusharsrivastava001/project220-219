@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's New</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f4f7fa;
+      color: #333;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #007bff;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .update-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .update-card {
+      background-color: white;
+      padding: 20px;
+      width: 30%;
+      min-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .update-card:hover {
+      transform: translateY(-8px);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #0056b3;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .update-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>What's New</h1>
+    <p>Stay updated with the latest product features, announcements, and innovations.</p>
+
+    <div class="update-section">
+      <!-- Update Card 1 -->
+      <div class="update-card">
+        <h2>AI-Powered Analytics</h2>
+        <p class="date">Released on March 25, 2025</p>
+        <p>Get actionable insights with our AI-driven analytics dashboard. Predict trends and make smarter decisions.</p>
+        <a href="#">Learn More</a>
+      </div>
+
+      <!-- Update Card 2 -->
+      <div class="update-card">
+        <h2>Faster Checkout Experience</h2>
+        <p class="date">Released on March 18, 2025</p>
+        <p>Introducing a seamless one-click checkout experience for faster purchases and happier customers.</p>
+        <a href="#">Try It Now</a>
+      </div>
+
+      <!-- Update Card 3 -->
+      <div class="update-card">
+        <h2>New Payment Gateways</h2>
+        <p class="date">Released on March 10, 2025</p>
+        <p>We now support 10+ new payment gateways, ensuring safe and secure transactions worldwide.</p>
+        <a href="#">Explore More</a>
+      </div>
+
+      <!-- Update Card 4 -->
+      <div class="update-card">
+        <h2>24/7 Live Chat Support</h2>
+        <p class="date">Released on March 5, 2025</p>
+        <p>Our live chat is now available 24/7 to assist you with any queries or issues.</p>
+        <a href="#">Contact Support</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
