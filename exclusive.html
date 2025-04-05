@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exclusive | NextGen Commerce</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #4f70a6, #1c1f2d, #121c28);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+    }
+
+    .exclusive-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px 20px;
+      gap: 30px;
+    }
+
+    .exclusive-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      width: 300px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease, background 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .exclusive-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .exclusive-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .exclusive-card p {
+      font-size: 0.95rem;
+      color: #e0e0e0;
+    }
+
+    .badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ff4a57;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .cta {
+      margin-top: 20px;
+      display: inline-block;
+      background: #00c6ff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background: #008cba;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Exclusive Offers</h1>
+    <p>Unlock next-level deals only available to our premium users. Don't miss out!</p>
+  </header>
+
+  <section class="exclusive-container">
+    <div class="exclusive-card">
+      <div class="badge">Hot</div>
+      <h2>Early Access Products</h2>
+      <p>Get your hands on our latest launches before anyone else. Be the first to explore future trends.</p>
+      <a class="cta" href="#">Claim Access</a>
+    </div>
+
+    <div class="exclusive-card">
+      <div class="badge">New</div>
+      <h2>VIP Discounts</h2>
+      <p>Special pricing on selected products. Save more, buy smarter — exclusively for you.</p>
+      <a class="cta" href="#">Unlock Deal</a>
+    </div>
+
+    <div class="exclusive-card">
+      <div class="badge">Limited</div>
+      <h2>Invite-Only Events</h2>
+      <p>Gain entry to secret sales, virtual meetups, and product reveal events for our top-tier users.</p>
+      <a class="cta" href="#">Join Now</a>
+    </div>
+  </section>
+
+</body>
+</html>

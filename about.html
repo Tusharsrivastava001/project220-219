@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - ShopEase</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #111;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 77, 109, 0.2);
+      margin: 30px 0;
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 40px rgba(255, 77, 109, 0.4);
+    }
+
+    .highlight {
+      color: #ff416c;
+    }
+
+    .counters {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+
+    .counter {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff4b2b;
+      text-align: center;
+    }
+
+    .counter-label {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .glow {
+      text-shadow: 0 0 10px #ff4b2b, 0 0 20px #ff416c, 0 0 30px #ff4b2b;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="glow">About <span class="highlight">ShopEase</span></header>
+
+  <div class="container">
+    <div class="card fade-in">
+      <h2>Who We Are</h2>
+      <p>ShopEase is your one-stop digital marketplace. We're passionate about offering unique experiences, top brands, and seamless delivery to your doorstep.</p>
+    </div>
+
+    <div class="card fade-in">
+      <h2>Our Vision</h2>
+      <p>To become India's most loved shopping platform — blending AI, affordability, and amazing deals into one powerful platform.</p>
+    </div>
+
+    <div class="card fade-in">
+      <h2>Trusted by Millions</h2>
+      <div class="counters">
+        <div>
+          <div class="counter" data-target="50000">0</div>
+          <div class="counter-label">+ Happy Users</div>
+        </div>
+        <div>
+          <div class="counter" data-target="10000">0</div>
+          <div class="counter-label">+ Products Delivered</div>
+        </div>
+        <div>
+          <div class="counter" data-target="250">0</div>
+          <div class="counter-label">Cities Reached</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Scroll Fade In
+    const faders = document.querySelectorAll('.fade-in');
+    window.addEventListener('scroll', () => {
+      faders.forEach(fader => {
+        const rect = fader.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          fader.classList.add('visible');
+        }
+      });
+    });
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const speed = 100; // smaller is faster
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script>
+
+</body>
+</html>
