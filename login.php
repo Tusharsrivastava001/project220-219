@@ -1,18 +1,43 @@
 <?php
-include 'db.php';
+session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $uname = $_POST['username'];
-    $pass = $_POST['password'];
+// 🔗 Database connection (no separate config.php)
+$host = "localhost";
+$user = "root";
+$pass = ""; // default for XAMPP
+$dbname = "login_system";
 
-    $sql = "SELECT * FROM users WHERE username='$uname' AND password='$pass'";
-    $result = $conn->query($sql);
+$conn = new mysqli($host, $user, $pass, $dbname);
 
-    if ($result->num_rows == 1) {
-        echo "<script>alert('Login successful!');</script>";
-        // Redirect or session logic can go here
-    } else {
-        echo "<script>alert('Invalid credentials!'); window.location.href='login.html';</script>";
-    }
+// ❌ Check for connection error
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+// 🧠 Validate login input
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // 🔍 Query using prepared statement to prevent SQL injection
+    $sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    
+    if ($result->num_rows === 1) {
+        $_SESSION['username'] = $username;
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "<script>alert('Invalid username or password!'); window.location.href='login.html';</script>";
+    }
+
+    $stmt->close();
+}
+
+$conn->close();
 ?>

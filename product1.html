@@ -164,35 +164,55 @@
     function addToCart() {
       alert("Product added to cart!");
     }
-
+  
     function buyNow() {
       alert("Redirecting to payment page...");
       window.location.href = "checkout.html";
     }
-
+  
     function submitReview() {
       const username = document.getElementById('username').value.trim();
       const rating = document.getElementById('rating').value;
       const reviewText = document.getElementById('review').value.trim();
-
+  
       if (!username || !reviewText) {
         alert('Please fill out all fields before submitting your review.');
         return;
       }
-
-      const reviewList = document.getElementById('review-list');
-      const newReview = document.createElement('li');
-      const stars = '⭐'.repeat(rating);
-      newReview.innerHTML = `<strong>${username}:</strong> "${reviewText}" ${stars}`;
-      reviewList.appendChild(newReview);
-
-      alert('Review submitted successfully!');
-      
-      // Clear the input fields
-      document.getElementById('username').value = '';
-      document.getElementById('rating').value = '5';
-      document.getElementById('review').value = '';
+  
+      const formData = new FormData();
+      formData.append('username', username);
+      formData.append('rating', rating);
+      formData.append('review', reviewText);
+  
+      fetch('submit_review.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        if (data === 'success') {
+          const reviewList = document.getElementById('review-list');
+          const newReview = document.createElement('li');
+          const stars = '⭐'.repeat(rating);
+          newReview.innerHTML = `<strong>${username}:</strong> "${reviewText}" ${stars}`;
+          reviewList.appendChild(newReview);
+  
+          // Clear form
+          document.getElementById('username').value = '';
+          document.getElementById('rating').value = '5';
+          document.getElementById('review').value = '';
+  
+          alert('Review submitted successfully!');
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      })
+      .catch(err => {
+        alert('Error submitting review: ' + err);
+      });
     }
   </script>
+  
 </body>
 </html>
