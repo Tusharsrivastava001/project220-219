@@ -30,7 +30,7 @@ session_start();
                 <div class="text"><a href="today.html">Todays Deals</a></div>
               </div>
     <div id="button">
-                <div id="trial"><a href="#">Trial button</a></div>
+                <!-- <div id="trial"><a href="#">Trial button</a></div> -->
         <div id="user">
             <?php
             if (isset($_SESSION['username'])) {
@@ -42,9 +42,6 @@ session_start();
             ?>
         </div>
         <a href="cart.html" class="view-cart">View Cart (<span id="cart-count">0</span>)</a>
-
-
-
     </div>
     
         </div>
@@ -416,9 +413,9 @@ document.addEventListener('DOMContentLoaded', updateCartCount);
           <!-- Contact Section -->
           <div class="footer-column">
             <h3>Contact Us</h3>
-            <p>Email: support@yourcompany.com</p>
-            <p>Phone: +1 234 567 890</p>
-            <p>Address: 123 Business Ave, Startup City</p>
+            <p>Email: Nextecom.com</p>
+            <p>Phone: +919115410470</p>
+            <p>Address: Lpu, Phagwara,Punjab,India</p>
           </div>
           
           <!-- Social Media Section -->
@@ -426,9 +423,9 @@ document.addEventListener('DOMContentLoaded', updateCartCount);
             <h3>Follow Us</h3>
             <div class="social-icons">
               <a href="https://www.facebook.com/login/"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-              <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
-              <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-              <a href="#"> <i class="fa-brands fa-linkedin"></i> Linkedin</a>
+              <a href="https://x.com/i/flow/login"><i class="fa-brands fa-twitter"></i> Twitter</a>
+              <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fa-brands fa-instagram"></i> Instagram</a>
+              <a href="https://www.linkedin.com/login"> <i class="fa-brands fa-linkedin"></i> Linkedin</a>
             </div>
           </div>
         </div>

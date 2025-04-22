@@ -1,298 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register with Google</title>
-    <style>
-        :root {
-            --primary-color: #4285F4;
-            --error-color: #EA4335;
-            --success-color: #34A853;
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-            --border-color: #ddd;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light-gray);
-            color: var(--text-color);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-            padding: 40px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 16px;
-            transition: border 0.3s;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .btn-primary:hover {
-            background-color: #3367d6;
-        }
-
-        .divider {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-            color: #777;
-            font-size: 14px;
-        }
-
-        .divider::before, .divider::after {
-            content: "";
-            flex: 1;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .divider::before {
-            margin-right: 10px;
-        }
-
-        .divider::after {
-            margin-left: 10px;
-        }
-
-        .login-link {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .login-link a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-
-        #google-signin-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .success-message {
-            color: var(--success-color);
-            text-align: center;
-            margin-top: 20px;
-            display: none;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Glassmorphism Register Page | coding.pixel</title>
+  <link rel="stylesheet" href="login.css"> <!-- Same CSS file as login -->
 </head>
 <body>
-    <div class="container">
-        <h1>Create Your Account</h1>
-        
-        <form id="registrationForm">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required minlength="8">
-            </div>
-            
-            <button type="submit" class="btn-primary">Register</button>
-            
-            <div class="divider">or</div>
-            
-            <div id="google-signin-container"></div>
-        </form>
-        
-        <div class="success-message" id="successMessage">
-            Registration successful! Redirecting...
-        </div>
-        
-        <div class="login-link">
-            Already have an account? <a href="login.html">Sign in</a>
-        </div>
+  <section>
+    <!-- Leaves Animation -->
+    <div class="leaves">
+      <div class="set">
+        <div><img src="leaf_01.png" alt=""></div>
+        <div><img src="leaf_02.png" alt=""></div>
+        <div><img src="leaf_03.png" alt=""></div>
+        <div><img src="leaf_04.png" alt=""></div>
+        <div><img src="leaf_01.png" alt=""></div>
+        <div><img src="leaf_02.png" alt=""></div>
+        <div><img src="leaf_03.png" alt=""></div>
+        <div><img src="leaf_04.png" alt=""></div>
+      </div>
     </div>
 
-    <!-- Google Identity Services SDK -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Google Sign-In
-            function initializeGoogleSignIn() {
-                google.accounts.id.initialize({
-                    client_id: "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
-                    callback: handleGoogleSignIn,
-                    auto_select: false,
-                    ux_mode: "popup"
-                });
-                
-                // Render Google Sign-In button
-                google.accounts.id.renderButton(
-                    document.getElementById("google-signin-container"),
-                    {
-                        type: "standard",
-                        theme: "outline",
-                        size: "large",
-                        text: "continue_with",
-                        shape: "rectangular",
-                        logo_alignment: "left",
-                        width: "400"
-                    }
-                );
-                
-                // Also offer the One Tap prompt
-                google.accounts.id.prompt();
-            }
-            
-            // Handle Google Sign-In response
-            function handleGoogleSignIn(response) {
-                console.log("Google Sign-In response:", response);
-                
-                // Decode the JWT token to get user info
-                const userInfo = parseJwt(response.credential);
-                console.log("User info:", userInfo);
-                
-                // Here you would typically send this to your backend for verification
-                // For now, we'll just display the success message
-                document.getElementById('registrationForm').style.display = 'none';
-                document.getElementById('successMessage').style.display = 'block';
-                
-                // In a real app, you would send the token to your backend
-                // fetch('/api/google-auth', {
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type': 'application/json'
-                //     },
-                //     body: JSON.stringify({ token: response.credential })
-                // })
-                
-                // Simulate redirect after 2 seconds
-                setTimeout(() => {
-                    window.location.href = 'dashboard.html';
-                }, 2000);
-            }
-            
-            // Helper function to parse JWT
-            function parseJwt(token) {
-                const base64Url = token.split('.')[1];
-                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-                }).join(''));
-                
-                return JSON.parse(jsonPayload);
-            }
-            
-            // Regular form submission
-            document.getElementById('registrationForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simple validation
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const password = document.getElementById('password').value;
-                
-                if (name && email && password.length >= 8) {
-                    // Here you would typically send the data to your backend
-                    console.log('Form submitted:', { name, email, password });
-                    
-                    // Show success message
-                    document.getElementById('registrationForm').style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
-                    
-                    // Simulate redirect after 2 seconds
-                    setTimeout(() => {
-                        window.location.href = 'dashboard.html';
-                    }, 2000);
-                }
-            });
-            
-            // Initialize Google Sign-In when the Google SDK is loaded
-            if (typeof google !== 'undefined') {
-                initializeGoogleSignIn();
-            } else {
-                // Fallback in case the Google SDK doesn't load
-                document.getElementById('google-signin-container').innerHTML = 
-                    '<button onclick="alert(\'Google Sign-In is currently unavailable. Please try regular registration.\')" ' +
-                    'style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 4px; cursor: pointer;">' +
-                    'Sign in with Google</button>';
-            }
-        });
-    </script>
+    <!-- Background Images -->
+    <img src="bg.jpg" class="bg" alt="background">
+    <img src="girl.png" class="girl" alt="girl">
+    <img src="trees.png" class="trees" alt="trees">
+
+    <!-- Register Box -->
+    <div class="login">
+      <form action="register.php" method="POST">
+        <h2>Create Account</h2>
+
+        <div class="inputBox">
+          <input type="text" name="fullname" placeholder="Full Name" required>
+        </div>
+
+        <div class="inputBox">
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="inputBox">
+          <input type="text" name="username" placeholder="Username" required>
+        </div>
+
+        <div class="inputBox">
+          <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div class="inputBox">
+          <input type="submit" value="Register" id="btn">
+        </div>
+
+        <div class="group">
+          <a href="login.html">Already have an account? Login</a>
+        </div>
+      </form>
+    </div>
+  </section>
 </body>
 </html>
